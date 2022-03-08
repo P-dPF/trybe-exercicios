@@ -30,3 +30,7 @@ h3:nth-last-of-type(1) {
 h3:nth-last-of-type(2) {
     font-style: italic;
 }
+
+h3:nth-child(odd) {
+    font-style: italic;
+}
