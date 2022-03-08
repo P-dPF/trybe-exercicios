@@ -21,3 +21,11 @@ div:nth-of-type(4) {
 div:nth-of-type(5) {
     background-color: brown;
 }
+
+h3:nth-last-of-type(1) {
+    text-decoration: line-through;
+}
+
+h3:nth-last-of-type(2) {
+    font-style: italic;
+}
