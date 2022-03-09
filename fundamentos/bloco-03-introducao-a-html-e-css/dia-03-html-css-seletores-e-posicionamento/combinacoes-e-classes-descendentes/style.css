@@ -34,3 +34,27 @@ li {
 .cor-fundo {
     background-color: pink;
 }
+
+ul.links li a:hover {
+    font-weight: bold;
+}
+
+#so {
+    color: orange;
+}
+
+#w3s {
+    color: green;
+}
+
+#mdn {
+    color: black;
+}
+
+#dvd {
+    color: yellow;
+}
+
+#trybe {
+    color: green;
+}
