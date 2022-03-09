@@ -26,3 +26,11 @@ li {
 .realce {
     font-weight: bold;
 }
+
+.cor-lista {
+    color: blue;
+}
+
+.cor-fundo {
+    background-color: pink;
+}
