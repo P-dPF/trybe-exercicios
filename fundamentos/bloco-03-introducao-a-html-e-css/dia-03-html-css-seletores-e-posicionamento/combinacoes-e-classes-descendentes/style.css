@@ -1,0 +1,60 @@
+.bckgnd-clr {
+    background-color: yellow;
+}
+
+.impar {
+    text-transform: uppercase;
+}
+
+.par {
+    color: green;
+}
+
+h1, h2, h3 {
+    color: red;
+}
+
+h1 {
+    font-size: 40px;
+    border: 1px solid black;
+}
+
+li {
+    font-size: 20px;
+}
+
+.realce {
+    font-weight: bold;
+}
+
+.cor-lista {
+    color: blue;
+}
+
+.cor-fundo {
+    background-color: pink;
+}
+
+ul.links li a:hover {
+    font-weight: bold;
+}
+
+#so {
+    color: orange;
+}
+
+#w3s {
+    color: green;
+}
+
+#mdn {
+    color: black;
+}
+
+#dvd {
+    color: yellow;
+}
+
+#trybe {
+    color: green;
+}
