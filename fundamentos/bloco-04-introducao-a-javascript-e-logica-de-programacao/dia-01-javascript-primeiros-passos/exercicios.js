@@ -34,5 +34,40 @@ else if (segundo > primeiro && segundo > terceiro) {
     console.log("o segundo é maior");
 }
 else {
-    console.log("o terceiro é maior")
+    console.log("o terceiro é maior");
+}
+
+//Exercício 4
+
+const valor = 10;
+
+if (valor > 0) {
+    console.log("positive");
+}
+else if (valor < 0) {
+    console.log("negative");
+}
+else {
+    console.log("zero");
+}
+
+//Exercício 5
+
+const angulo1 = 90;
+const angulo2 = 30;
+const angulo3 = 60;
+
+let somaAngulos = angulo1 + angulo2 + angulo3 === 180
+let angulosPositivos = angulo1 > 0 && angulo2 > 0 && angulo3 > 0
+
+if (angulosPositivos) {
+    if (angulo1 + angulo2 + angulo3 === 180) {
+        console.log("true");
+    }
+    else {
+        console.log("false");
+    }
+}
+else {
+    console.log("há pelo menos um ângulo inválido");
 }
