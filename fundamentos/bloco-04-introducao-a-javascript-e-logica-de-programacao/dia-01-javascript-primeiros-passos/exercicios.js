@@ -71,3 +71,36 @@ if (angulosPositivos) {
 else {
     console.log("há pelo menos um ângulo inválido");
 }
+
+//Exercício 6
+
+let piece = "QuEEn";
+
+switch (piece.toLowerCase()) {
+    case "king":
+        console.log("verticals, horizontals and diagonals - one step");
+        break;
+
+    case "queen":
+        console.log("verticals, horizontals and diagonals");
+        break;
+
+    case "rook":
+        console.log("verticals and horizontals");
+        break;
+
+    case "pawn":
+        console.log("only foward verticals");
+        break;
+
+    case "bishop":
+        console.log("diagonals");
+        break;
+
+    case "knight":
+        console.log("verticals and horizontals as an L");
+        break;
+
+    default:
+        console.log("invalid piece");
+}
