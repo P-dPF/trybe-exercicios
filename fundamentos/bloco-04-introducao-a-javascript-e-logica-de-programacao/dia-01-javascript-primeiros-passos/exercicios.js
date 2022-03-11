@@ -143,3 +143,17 @@ if (number1 % 2 === 0 || number2 % 2 === 0 || number3 % 2 === 0) {
 else {
     console.log("false");
 }
+
+//Exercício 9
+
+const numberOne = 10
+const numberTwo = 13
+const numberThree = 22
+
+let isOdd = false
+
+if (numberOne % 2 !== 0 || numberTwo % 2 !== 0 || numberThree % 2 !== 0) {
+    isOdd = true
+}
+
+console.log(isOdd)
