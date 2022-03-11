@@ -130,3 +130,16 @@ else if (nota < 50 && nota >= 0) {
 else {
     console.log("nota inválida");
 }
+
+//Exercício 8
+
+const number1 = 15;
+const number2 = 11;
+const number3 = 13;
+
+if (number1 % 2 === 0 || number2 % 2 === 0 || number3 % 2 === 0) {
+    console.log("true");
+}
+else {
+    console.log("false");
+}
