@@ -171,3 +171,67 @@ if (cost >= 0 && price >= 0) {
 else {
     console.log("valores inválidos")
 }
+
+//Exercício 11
+
+const salarioBruto = 3000;
+/* let inss;
+let ir;
+let salarioBase
+let salarioLiquido;
+ */
+if (salarioBruto <= 1556.94) {
+    salarioBase = (salarioBruto * 0.92);
+    salarioLiquido = salarioBase;
+    console.log(salarioLiquido);
+}
+else if (salarioBruto >= 1556.95 && salarioBruto <= 2594.92) {
+    salarioBase = (salarioBruto * 0.91);
+    if (salarioBase <= 1903.98) {
+        salarioLiquido = salarioBase;
+        console.log(salarioLiquido);
+    }
+    else if (salarioBase >= 1903.99 && salarioBase <= 2826.65) {
+        salarioLiquido = ((salarioBase * 0.075) - 142.82) + salarioBase;
+        console.log(salarioLiquido);
+    }
+}
+else if (salarioBruto >= 2594.93 && salarioBruto <= 5189.82) {
+    salarioBase = (salarioBruto * 0.89);
+    if (salarioBase >= 1903.99 && salarioBase <= 2826.65) {
+        salarioLiquido = ((salarioBase * 0.075) - 142.82) + salarioBase;
+        console.log(salarioLiquido);
+    }
+    else if (salarioBase >= 2826.66 && salarioBase <= 3751.05) {
+        salarioLiquido = ((salarioBase * 0.15) - 354.80) + salarioBase;
+        console.log(salarioLiquido);
+    }
+    else if (salarioBase >= 3751.06 && salarioBase <= 4664.68) {
+        salarioLiquido = ((salarioBase * 0.225) - 636.13) + salarioBase;
+        console.log(salarioLiquido);
+    }
+}
+else if (salarioBruto > 5189.82) {
+    salarioBase = salarioBruto - 570.88
+    if (salarioBase >= 3751.06 && salarioBase <= 4664.68) {
+        salarioLiquido = ((salarioBase * 0.225) - 636.13) + salarioBase;
+        console.log(salarioLiquido);
+    }
+    else if (salarioBase > 4664.68) {
+        salarioLiquido = ((salarioBase * 0.275) - 869.36) + salarioBase;
+        console.log(salarioLiquido);
+    }
+}
+
+
+/* if (salarioBruto <= 1556.94) {
+    salarioBase = (salarioBruto * 0.92);
+    if (salarioBase <= 1903.98) {
+        salarioLiquido = salarioBase;
+        console.log(salarioLiquido);
+    }
+}
+else if (salarioBruto >= 1556.95 && salarioBruto <= 2594.92) {
+    salarioBase = (salarioBruto * 0,91);
+    if (salarioBase 
+} */
