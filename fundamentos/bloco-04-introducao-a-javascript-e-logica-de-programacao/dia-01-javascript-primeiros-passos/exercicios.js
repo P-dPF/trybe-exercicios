@@ -157,3 +157,17 @@ if (numberOne % 2 !== 0 || numberTwo % 2 !== 0 || numberThree % 2 !== 0) {
 }
 
 console.log(isOdd)
+
+//Exercício 10
+
+const cost = 100;
+const price = 500;
+
+if (cost >= 0 && price >= 0) {
+    let totalCost = cost * 1.2;
+    let profit = (price - totalCost) * 1000;
+    console.log(profit);
+}
+else {
+    console.log("valores inválidos")
+}
