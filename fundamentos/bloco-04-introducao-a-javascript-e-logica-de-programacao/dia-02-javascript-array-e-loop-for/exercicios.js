@@ -2,7 +2,7 @@
 
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
-/* for (i = 0; i < numbers.length; i += 1) {
+for (i = 0; i < numbers.length; i += 1) {
     console.log(numbers[i]);
 }
 
@@ -33,11 +33,11 @@ if (average > 20) {
 }
 else {
     console.log('valor menor ou igual a 20');
-} */
+}
 
 //Exercício 5
 
-/* let maiorNumero = numbers[0];
+let maiorNumero = numbers[0];
 
 for (let index = 0; index < numbers.length; index += 1) {
     if (numbers[index] > maiorNumero) {
@@ -45,11 +45,11 @@ for (let index = 0; index < numbers.length; index += 1) {
     }
 }
 
-console.log(maiorNumero); */
+console.log(maiorNumero);
 
 //Exercício 6
 
-/* let impares = 0;
+let impares = 0;
 
 for (let index = 0; index < numbers.length; index += 1) {
     if (numbers[index] % 2 !== 0) {
@@ -61,11 +61,11 @@ if (impares === 0) {
     console.log('nenhum valor ímpar encontrado');
 }
 
-console.log(impares); */
+console.log(impares);
 
 //Exercício 7
 
-/* let menorNumero = numbers[0];
+let menorNumero = numbers[0];
 
 for (i = 0; i < numbers.length; i += 1) {
     if (numbers[i] < menorNumero) {
@@ -73,7 +73,7 @@ for (i = 0; i < numbers.length; i += 1) {
     }
 }
 
-console.log(menorNumero); */
+console.log(menorNumero);
 
 //Exercício 8
 
@@ -84,3 +84,9 @@ for (i = 1; i <= 25; i += 1) {
 }
 
 console.log(sequencia);
+
+//Exercício 9
+
+for (i = 0; i < 25; i += 1) {
+    console.log(sequencia[i] / 2);
+}
