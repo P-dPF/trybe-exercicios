@@ -49,7 +49,7 @@ console.log(maiorNumero); */
 
 //Exercício 6
 
-let impares = 0;
+/* let impares = 0;
 
 for (let index = 0; index < numbers.length; index += 1) {
     if (numbers[index] % 2 !== 0) {
@@ -61,4 +61,16 @@ if (impares === 0) {
     console.log('nenhum valor ímpar encontrado');
 }
 
-console.log(impares);
+console.log(impares); */
+
+//Exercício 7
+
+let menorNumero = numbers[0];
+
+for (i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] < menorNumero) {
+        menorNumero = numbers[i]
+    }
+}
+
+console.log(menorNumero);
