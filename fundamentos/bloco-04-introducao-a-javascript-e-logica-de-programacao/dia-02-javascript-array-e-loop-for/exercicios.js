@@ -25,3 +25,12 @@ for (index = 0; index < numbers.length; index += 1) {
 let average = soma / numbers.length;
 
 console.log(average);
+
+//Exercício 4
+
+if (average > 20) {
+    console.log('valor maior que 20');
+}
+else {
+    console.log('valor menor ou igual a 20');
+}
