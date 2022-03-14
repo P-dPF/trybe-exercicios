@@ -14,3 +14,14 @@ for (index = 0; index < numbers.length; index += 1) {
     sum += numbers[index]
 }
 console.log(sum);
+
+//Exercício 3
+let soma = 0;
+
+for (index = 0; index < numbers.length; index += 1) {
+    soma += numbers[index];
+}
+
+let average = soma / numbers.length;
+
+console.log(average);
