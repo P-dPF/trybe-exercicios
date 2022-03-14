@@ -65,7 +65,7 @@ console.log(impares); */
 
 //Exercício 7
 
-let menorNumero = numbers[0];
+/* let menorNumero = numbers[0];
 
 for (i = 0; i < numbers.length; i += 1) {
     if (numbers[i] < menorNumero) {
@@ -73,4 +73,14 @@ for (i = 0; i < numbers.length; i += 1) {
     }
 }
 
-console.log(menorNumero);
+console.log(menorNumero); */
+
+//Exercício 8
+
+let sequencia = [];
+
+for (i = 1; i <= 25; i += 1) {
+    sequencia.push(i);
+}
+
+console.log(sequencia);
