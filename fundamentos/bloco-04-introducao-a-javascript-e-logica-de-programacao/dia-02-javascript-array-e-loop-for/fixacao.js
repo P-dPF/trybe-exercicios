@@ -1,5 +1,7 @@
 //Exercício de Fixação - Dia 4.2
 
+//Arrays
+
 //Exercício 1
 
 let menu = ['Home', 'Serviços', 'Portfólio', 'Links'];
@@ -23,3 +25,13 @@ console.log(menu2);
 menu2.push('Contato');
 
 console.log(menu2);
+
+//For
+
+//Exercício 1
+
+let groceryList = ['Arroz', 'Feijão', 'Alface', 'Melancia'];
+
+for (index = 0; index < groceryList.length; index += 1) {
+    console.log(groceryList[index]);
+}
