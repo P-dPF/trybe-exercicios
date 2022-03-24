@@ -74,7 +74,7 @@
 
       //Exercício 3
       let section = document.createElement("section");
-      section.className = "main-content";
+      section.className = "center-content";
       main.appendChild(section);
 
       //Exercício 4
@@ -107,6 +107,13 @@
           let listElements = document.createElement("li");
           listElements.innerText = numbers[i];
           list.appendChild(listElements);
+      }
+
+      //Exercício 9
+      for (index = 1; index <= 3; index += 1) {
+        let lastTitle = document.createElement("h3");
+        lastTitle.innerText = "Títulos de Exemplo";
+        main.appendChild(lastTitle);
       }
 
     </script>
