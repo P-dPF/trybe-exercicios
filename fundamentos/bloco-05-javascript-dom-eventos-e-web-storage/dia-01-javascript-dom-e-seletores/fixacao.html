@@ -15,6 +15,13 @@
       document.getElementById("subtitle").innerText = "Nova substituição de texto por meio de manipulação de elementos do DOM :)";
       document.getElementsByClassName("exemplo")[0].style.backgroundColor = "wheat";
       document.getElementsByTagName("h4")[0].style.color = "green";
+
+      document.querySelector("#page-title").innerText = "Título Modificado com querySelector";
+      document.querySelector("#second-paragraph").style.color = "brown";
+      document.querySelector("#subtitle").style.backgroundColor = "yellow";
+
+      document.querySelectorAll("p")[0].innerText = "Edição usando querySelectorAll";
+      document.querySelectorAll("h4")[0].style.fontSize = "20px";
     </script>
   </body>
 </html>
