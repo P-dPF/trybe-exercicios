@@ -52,6 +52,16 @@
         outroPai.appendChild(maisElemento);
 
         console.log(document.getElementsByTagName("p")[0].parentElement.parentElement.nextElementSibling);
+
+        let pai = document.getElementById("pai");
+        for (index = 0; index < pai.childNodes; index += 1) {
+            if (pai.childNodes[index].id !== "elementoOndeVoceEsta") {
+                pai.childNodes[index].remove();
+            }
+        }
+
+        let filhoSobra = document.getElementById("segundoEUltimoFilhoDoFilho");
+        filhoSobra.remove()
     </script>
 </body>
 
