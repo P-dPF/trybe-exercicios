@@ -31,7 +31,27 @@
         document.getElementById("elementoOndeVoceEsta").previousSibling;
         document.getElementById("elementoOndeVoceEsta").nextSibling;
         document.getElementById("elementoOndeVoceEsta").nextElementSibling;
-        console.log(document.getElementById("pai").children[2]);
+        document.getElementById("pai").children[2];
+
+        let newText = "Olá";
+        let newElement = document.createElement("p");
+        newElement.innerText = newText;
+        let elementoPai = document.getElementById("pai");
+        elementoPai.appendChild(newElement);
+        
+        let novoTexto = "Treino";
+        let elementoOnde = document.getElementById("elementoOndeVoceEsta");
+        let novoElemento = document.createElement("p");
+        novoElemento.innerText = novoTexto;
+        elementoOnde.appendChild(novoElemento);
+
+        let vamoDeNovo = "Mais um exemplo";
+        let outroPai = document.getElementById("primeiroFilhoDoFilho");
+        let maisElemento = document.createElement("p");
+        maisElemento.innerText = vamoDeNovo;
+        outroPai.appendChild(maisElemento);
+
+        console.log(document.getElementsByTagName("p")[0].parentElement.parentElement.nextElementSibling);
     </script>
 </body>
 
