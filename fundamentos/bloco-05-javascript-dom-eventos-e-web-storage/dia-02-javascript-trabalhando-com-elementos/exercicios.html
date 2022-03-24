@@ -97,7 +97,17 @@
       image.setAttribute("src", "https://picsum.photos/200");
       image.className = "small-image";
       secondSection.appendChild(image);
-      
+
+      //Exercício 8
+      let list = document.createElement("ul");
+      thirdSection.appendChild(list);
+
+      let numbers = ["um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez"];
+      for (i = 0; i < numbers.length; i += 1) {
+          let listElements = document.createElement("li");
+          listElements.innerText = numbers[i];
+          list.appendChild(listElements);
+      }
 
     </script>
   </body>
