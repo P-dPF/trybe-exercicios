@@ -12,3 +12,10 @@ HREF_LINK.addEventListener('click', function(event) {
 INPUT_CHECKBOX.addEventListener('click', function(event) {
     event.preventDefault();
 });
+
+//Exercício 3
+INPUT_TEXT.addEventListener('keypress', function(event) {
+   if (event.key !== 'a') {
+       event.preventDefault();
+   } 
+});
