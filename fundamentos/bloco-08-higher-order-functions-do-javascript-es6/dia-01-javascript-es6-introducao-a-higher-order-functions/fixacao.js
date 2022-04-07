@@ -7,6 +7,11 @@ const breakfast = () => 'Bora tomar café!!';
 // Exercício 3
 const sleep = () => 'Partiu dormir!!';
 
-console.log(wakeUp());
-console.log(breakfast());
-console.log(sleep());
+// Exercício 4
+const doingThings = (func) => {
+  console.log(func());
+}
+
+doingThings(wakeUp);
+doingThings(breakfast);
+doingThings(sleep);
