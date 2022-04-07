@@ -27,3 +27,15 @@ const testingScope = (escopo) => {
 }
 
 console.log(testingScope(true));
+
+//Exercício 2
+
+
+
+// Parte 2
+
+//Exercício 1
+
+const factorial = (integer) => {
+    
+}
