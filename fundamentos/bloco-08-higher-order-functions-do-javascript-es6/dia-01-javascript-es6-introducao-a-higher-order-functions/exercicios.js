@@ -18,3 +18,5 @@ const newEmployees = (callback) => {
 };
 
 console.log(newEmployees(employeeInfo));
+
+// Exercício 2
