@@ -20,3 +20,12 @@ const newEmployees = (callback) => {
 console.log(newEmployees(employeeInfo));
 
 // Exercício 2
+
+const checkResult = (firstNumber, secondNumber) => firstNumber === secondNumber;
+
+const prize = (betNumber, callback) => {
+  answerNumber = Math.floor(Math.random() * 5 + 1);
+  return callback(betNumber, answerNumber) ? 'Parabéns você ganhou': 'Tente novamente';
+}
+
+console.log(prize(1, checkResult));
