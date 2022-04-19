@@ -42,3 +42,11 @@ function findMusic(id) {
 }
 
 console.log(findMusic('31031685'))
+
+// SOME E EVERY - EXERCÍCIO 1
+
+const names2 = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
+
+const hasName = (arr, name) => arr.some((person) => person === name);
+
+console.log(hasName(names2, 'Ana'))
