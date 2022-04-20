@@ -78,3 +78,9 @@ const people2 = [
 people2.sort((a, b) => a.age - b.age);
 
 console.log(people2);
+
+// EXERCÍCIO 2
+
+people2.sort((a, b) => b.age - a.age);
+
+console.log(people2);
