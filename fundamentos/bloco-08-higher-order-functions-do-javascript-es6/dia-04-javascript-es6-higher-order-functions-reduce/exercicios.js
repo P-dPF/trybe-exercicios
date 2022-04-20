@@ -84,3 +84,13 @@ function reduceNames() {
 }
 
 console.log(reduceNames());
+
+const expectedResult2 = 43;
+
+function averageAge() {
+  const ages = () => books.map((book) => book.releaseYear - book.author.birthYear)
+  const avg = () => ages.reduce((acc, curr) => (acc + curr) / ages.length);
+  return avg;
+}
+
+console.log(averageAge());
