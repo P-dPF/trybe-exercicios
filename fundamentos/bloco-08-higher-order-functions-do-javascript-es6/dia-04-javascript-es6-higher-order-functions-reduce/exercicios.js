@@ -77,20 +77,36 @@ const books = [
   },
 ];
 
-const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
+/* const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 
 function reduceNames() {
   return books.reduce(((acc, curr) => `${acc + curr.author.name}`), '');
 }
 
-console.log(reduceNames());
+console.log(reduceNames()); */
 
-const expectedResult2 = 43;
+/* const expectedResult2 = 43;
 
 function averageAge() {
-  const ages = () => books.map((book) => book.releaseYear - book.author.birthYear)
-  const avg = () => ages.reduce((acc, curr) => (acc + curr) / ages.length);
-  return avg;
+  return ages = () => books.map((book) => book.releaseYear - book.author.birthYear).reduce((acc, curr) => (acc + curr) / ages.length);
 }
 
-console.log(averageAge());
+console.log(averageAge()); */
+
+
+const expectedResult = {
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  genre: 'Fantasia',
+  author: {
+    name: 'George R. R. Martin',
+    birthYear: 1948,
+  },
+  releaseYear: 1991,
+};
+
+function longestNamedBook() {
+  return books.reduce((acc, curr) => acc.name.length > curr.name.length ? acc : curr);
+}
+
+console.log(longestNamedBook());
