@@ -32,3 +32,13 @@ const generalInfo = { ...user, ... jobInfos};
 const { name, age, nationality, profession, squad, squadInitials } = generalInfo;
 
 console.log(`Hi, my name is ${name}, I'm ${age} years old and I'm Brazilian. I work as a ${profession} and my squad is ${squadInitials}-${squad}`);
+
+// ARRAY DESTRUCTURING
+
+const saudacoes = ['Olá', (saudacao) => console.log(saudacao)];
+
+/* saudacoes[1](saudacoes[0]); // Olá */
+
+const [word, wordUse] = saudacoes;
+
+console.log(wordUse(word));
