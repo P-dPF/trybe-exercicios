@@ -52,3 +52,12 @@ console.log(comida, animal, bebida); // arroz gato água
 [comida, animal, bebida] = [bebida, comida, animal];
 
 console.log(comida, animal, bebida);
+
+
+let numerosPares = [1, 3, 5, 6, 8, 10, 12];
+
+console.log(numerosPares); // [6, 8, 10, 12];
+
+[,,, ...pares] = numerosPares; 
+
+console.log(pares);
