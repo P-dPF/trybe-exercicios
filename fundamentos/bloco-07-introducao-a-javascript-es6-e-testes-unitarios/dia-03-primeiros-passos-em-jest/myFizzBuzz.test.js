@@ -11,4 +11,8 @@ describe('verifica se myFizzBuzz dá o retorno esperado conforme a divisibilidad
   test('verifica se myFizzBuzz retorna a string "fizz" quando o parâmetro recebido é divisível somente por 3', () => {
     expect(myFizzBuzz(9)).toBe('fizz');
   });
+  // ITEM 3
+  test('verifica se myFizzBuzz retorna a string "buzz" quando o parâmetro recebido é divisível somente por 5', () => {
+    expect(myFizzBuzz(25)).toBe('buzz');
+  });
 });
