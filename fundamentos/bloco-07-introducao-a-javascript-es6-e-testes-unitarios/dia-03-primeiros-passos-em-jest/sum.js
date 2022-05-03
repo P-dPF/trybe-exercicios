@@ -1,7 +1,9 @@
 // EXERCÍCIO 1
 
-// ITEM 1
+function sum(a, b) {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    throw new Error('parameters must be numbers');
+  }
 
-const sum = (a, b) => a + b;
-
-module.exports = sum;
+  return a + b;
+}
