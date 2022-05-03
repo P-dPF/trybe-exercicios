@@ -16,4 +16,8 @@ describe('verifica se a função soma retorna a soma dos seus parâmetros', () =
   test('sum lança um erro se receber um valor não numérico como parâmetro', () => {
     expect(() => sum(4, '5')).toThrow();
   });
+  // ITEM 4
+  test('teste se a mensagem de erro é "parameters must be numbers"', () => {
+    expect(() => sum(4, '5')).toThrowError(new Error('parameters must be numbers'));
+  });
 });
