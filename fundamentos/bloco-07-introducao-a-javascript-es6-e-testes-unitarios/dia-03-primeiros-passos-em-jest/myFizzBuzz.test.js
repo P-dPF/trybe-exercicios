@@ -15,7 +15,12 @@ describe('verifica se myFizzBuzz dá o retorno esperado conforme a divisibilidad
   test('verifica se myFizzBuzz retorna a string "buzz" quando o parâmetro recebido é divisível somente por 5', () => {
     expect(myFizzBuzz(25)).toBe('buzz');
   });
+  // ITEM 4
   test('verifica se myFizzBuzz retorna o prórpio parâmetro caso ele não seja divisível por 3 e nem por 5', () => {
     expect(myFizzBuzz(17)).toBe(17);
+  });
+  // ITEM 5
+  test('verifica se myFizzBuzz retorna false quando o parâmetro recebido não for do tipo numérico', () => {
+    expect(myFizzBuzz('5')).toBe(false);
   });
 });
