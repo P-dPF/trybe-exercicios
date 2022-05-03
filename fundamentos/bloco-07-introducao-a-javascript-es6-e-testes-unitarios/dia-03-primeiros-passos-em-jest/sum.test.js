@@ -12,4 +12,8 @@ describe('verifica se a função soma retorna a soma dos seus parâmetros', () =
   test('sum retorna a soma de 0 com 0 igual a 0', () => {
     expect(sum(0, 0)).toEqual(0);
   });
+  // ITEM 3
+  test('sum lança um erro se receber um valor não numérico como parâmetro', () => {
+    expect(() => sum(4, '5')).toThrow();
+  });
 });
