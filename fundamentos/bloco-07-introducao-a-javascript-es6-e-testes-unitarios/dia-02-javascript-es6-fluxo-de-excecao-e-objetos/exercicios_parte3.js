@@ -27,3 +27,9 @@ const addShift = (object, key, value) => {
 }
 
 console.log(addShift(lesson2, 'turno', 'noite'));
+
+// EXERCÍCIO 2
+
+const listKeys = (object) => Object.keys(object);
+
+console.log(listKeys(lesson3));
