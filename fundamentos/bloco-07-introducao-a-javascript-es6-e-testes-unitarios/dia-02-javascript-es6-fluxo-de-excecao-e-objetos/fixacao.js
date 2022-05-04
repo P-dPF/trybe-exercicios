@@ -25,13 +25,3 @@ const student2 = {
   SoftSkills: 'Ótimo',
   Git: 'Bom', // chave adicionada
 };
-
-const showPairs = (student) => {
-  let message = [];
-  for (let property in student) {
-    message.push(`${property}, Nível: ${student[property]}`);
-  }
-  return message
-}
-
-console.log(showPairs(student2));
