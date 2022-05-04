@@ -17,8 +17,6 @@
   <script>
     function checkInputs (firstValue, secondValue) {
       if (!firstValue || !secondValue) throw new Error('Informe um número em cada campo');
-    }
-    function checkIsNumber (firstValue, secondValue) {
       if (isNaN(firstValue) || isNaN(secondValue)) throw new Error('Insira somente algarismos');
     }
     function sum() {
@@ -26,15 +24,11 @@
           const value1 = document.getElementById('value1').value;
           const value2 = document.getElementById('value2').value;
           checkInputs(value1, value2);
-          checkIsNumber(value1, value2);
           const result = parseInt(value1) + parseInt(value2);
           document.getElementById('result').innerHTML = `Resultado: ${result}`;
-          document.getElementById('value1').value = '';
-          document.getElementById('value2').value = '';
         } catch (error) {
-          const value1 = document.getElementById('value1').value;
-          const value2 = document.getElementById('value2').value;
           document.getElementById('result').innerHTML = `Erro: ${error.message}`;
+        } finally {
           document.getElementById('value1').value = '';
           document.getElementById('value2').value = '';
         }
