@@ -33,3 +33,9 @@ console.log(addShift(lesson2, 'turno', 'noite'));
 const listKeys = (object) => Object.keys(object);
 
 console.log(listKeys(lesson3));
+
+// EXERCÍCIO 3
+
+const getObjectSize = (object) => Object.entries(object).length;
+
+console.log(getObjectSize(lesson1));
