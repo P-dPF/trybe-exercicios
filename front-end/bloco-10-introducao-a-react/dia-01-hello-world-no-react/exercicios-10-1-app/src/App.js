@@ -13,7 +13,7 @@ const createTaskList = tasksArray.map((task) => Task(task));
 
 class App extends React.Component {
   render() {
-    return createTaskList;
+    return <ul>{createTaskList}</ul>;
   }
 }
 
