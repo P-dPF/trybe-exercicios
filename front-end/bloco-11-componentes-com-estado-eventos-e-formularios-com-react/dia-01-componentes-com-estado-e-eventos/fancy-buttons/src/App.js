@@ -1,25 +1,33 @@
 import React from 'react';
 import './App.css';
 
-function handleClick() {
-  console.log('Botão apertado!');
-}
-
-function handleSecondClick() {
-  console.log('Falei para não apertar!');
-}
-
-function handleThirdClick() {
-  console.log('Pare de desobedecer!');
-}
-
 class App extends React.Component {
+
+  constructor() {
+    super()
+    this.handleClick = this.handleClick.bind(this);
+    this.handleSecondClick = this.handleSecondClick(this);
+    this.handleThirdClick = this.handleThirdClick(this);
+  }
+
+  handleClick() {
+    console.log('Botão apertado!');
+  }
+  
+  handleSecondClick() {
+    console.log('Falei para não apertar!');
+  }
+  
+  handleThirdClick() {
+    console.log('Pare de desobedecer!');
+  }
+
   render() {
     return (
       <div>
-        <button onClick={handleClick}>Aperte Aqui!</button>
-        <button onClick={handleSecondClick}>Não aperte esse!</button>
-        <button onClick={handleThirdClick}>Não aperte aqui também!</button>
+        <button onClick={this.handleClick}>Aperte Aqui!</button>
+        <button onClick={this.handleSecondClick}>Não aperte esse!</button>
+        <button onClick={this.handleThirdClick}>Não aperte aqui também!</button>
       </div>
     );   
   }
