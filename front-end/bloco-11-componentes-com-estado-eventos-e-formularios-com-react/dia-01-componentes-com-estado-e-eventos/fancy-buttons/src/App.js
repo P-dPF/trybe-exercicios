@@ -24,6 +24,7 @@ class App extends React.Component {
     this.setState((estadoAnterior, _props) => ({
       cliquesPrimeiroBotao: estadoAnterior.cliquesPrimeiroBotao + 1
     }))
+    console.log(this.changeBkgColor(this.state.cliquesPrimeiroBotao)); // AQUI O REQUISITO 9
   }
   
   handleSecondClick() {
@@ -33,6 +34,7 @@ class App extends React.Component {
     this.setState((estadoAnterior, _props) => ({
       cliquesSegundoBotao: estadoAnterior.cliquesSegundoBotao + 1
     }))
+    console.log(this.changeBkgColor(this.state.cliquesSegundoBotao)); // AQUI O REQUISITO 9
   }
   
   handleThirdClick() {
@@ -42,6 +44,7 @@ class App extends React.Component {
     this.setState((estadoAnterior, _props) => ({
       cliquesTerceiroBotao: estadoAnterior.cliquesTerceiroBotao + 1
     }))
+    console.log(this.changeBkgColor(this.state.cliquesTerceiroBotao)); // AQUI O REQUISITO 9
   }
 
   changeBkgColor(numClicks) {
