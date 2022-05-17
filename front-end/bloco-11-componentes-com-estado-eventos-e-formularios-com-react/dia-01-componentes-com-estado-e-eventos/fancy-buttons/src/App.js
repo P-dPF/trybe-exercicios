@@ -44,16 +44,34 @@ class App extends React.Component {
     }))
   }
 
-  changeBkgColor = (numClicks) => {
-    if (numClicks % 2 === 0) 
+  changeBkgColor(numClicks) {
+    if (numClicks % 2 === 0 && numClicks !== 0) return "green";
   }
 
   render() {
+
+    const { cliquesPrimeiroBotao, cliquesSegundoBotao, cliquesTerceiroBotao } = this.state;
+
     return (
       <div>
-        <button onClick={this.handleClick}>Aperte Aqui! {this.state.cliquesPrimeiroBotao}</button>
-        <button onClick={this.handleSecondClick}>Não aperte esse! {this.state.cliquesSegundoBotao}</button>
-        <button onClick={this.handleThirdClick}>Não aperte aqui também! {this.state.cliquesTerceiroBotao}</button>
+        <button 
+          onClick={this.handleClick}
+          style={{ backgroundColor: this.changeBkgColor(cliquesPrimeiroBotao) }}
+        >
+          Aperte Aqui! {this.state.cliquesPrimeiroBotao}
+        </button>
+        <button
+          onClick={this.handleSecondClick}
+          style={{ backgroundColor: this.changeBkgColor(cliquesSegundoBotao) }}
+        >
+          Não aperte esse! {this.state.cliquesSegundoBotao}
+        </button>
+        <button
+          onClick={this.handleThirdClick}
+          style={{ backgroundColor: this.changeBkgColor(cliquesTerceiroBotao) }}
+        >
+          Não aperte aqui também! {this.state.cliquesTerceiroBotao}
+        </button>
       </div>
     );   
   }
