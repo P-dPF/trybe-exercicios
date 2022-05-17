@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  text-align: center;
+  text-decoration: underline;
+  background-color: lightcoral;
+}
+
+.card {
+  display: flex;
+}
+
+.footer {
+  margin-bottom: auto;
+  color: green;
+  font-size: 40px;
+}
