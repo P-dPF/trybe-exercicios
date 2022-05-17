@@ -44,6 +44,10 @@ class App extends React.Component {
     }))
   }
 
+  changeBkgColor = (numClicks) => {
+    if (numClicks % 2 === 0) 
+  }
+
   render() {
     return (
       <div>
