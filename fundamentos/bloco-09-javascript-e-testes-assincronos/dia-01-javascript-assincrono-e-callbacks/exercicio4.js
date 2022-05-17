@@ -7,7 +7,8 @@ const getMarsTemperature = () => {
 
 // crie a função sendMarsTemperature abaixo
 
-const sendMarsTemperature = (temperature) => {
+const sendMarsTemperature = () => {
+  const temperature = getMarsTemperature();
   setTimeout(() => console.log(`Mars temperature is: ${temperature} degrees Celsius`), messageDelay());
 }; // imprime "Mars temperature is: 20 degree Celsius", por exemplo
 
