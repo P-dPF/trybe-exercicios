@@ -53,7 +53,11 @@ class App extends React.Component {
           <input type="text" name="textField" value={this.state.textField} onChange={this.handleChange}></input>
           <input type="number" name="numberField" value={this.state.numberField} onChange={this.handleChange}></input>
           <textarea name="textAreaField" value={this.state.textAreaField} onChange={this.handleChange}></textarea>
-          <input type="checkbox" name="checkboxField" onChange={this.handleChange}></input>
+          <fieldset>
+            <legend>Fieldset Exemplo</legend>
+            <input type="checkbox" name="checkboxField" onChange={this.handleChange}></input>
+            <input type="file"></input>
+          </fieldset>
         </form>
       </>
     );
