@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 class App extends React.Component {
-  constructor() {
+  /* constructor() {
     super();
     
     this.handleTextInputChange = this.handleTextInputChange.bind(this);
@@ -16,7 +16,28 @@ class App extends React.Component {
     this.setState({
       textInput: event.target.value,
     })
-  };
+  }; */
+
+  constructor() {
+    super();
+    
+    this.handleChange = this.handleChange.bind(this);
+
+    this.state = {
+      selecField: '',
+      textField: '',
+      numberField: '',
+      textAreaField:'',
+    }
+  }
+
+  handleChange(event) {
+    const { name } = event.target
+    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+    this.setState({
+      [name]: value,
+    })
+  }
 
   render() {
 
@@ -24,13 +45,13 @@ class App extends React.Component {
       <>
         <h1>Formulário Fixação Dia 11.2</h1>
         <form>
-          <select>
+          <select name="selecField" value={this.state.selecField} onChange={this.handleChange}>
             <option>Opção A</option>
             <option>Opção B</option>
           </select>
-          <input type="text" value={this.state.textInput} onChange={this.handleTextInputChange}></input>
-          <input></input>
-          <textarea></textarea>
+          <input type="text" name="textField" value={this.state.textField} onChange={this.handleChange}></input>
+          <input type="number" name="numberField" value={this.state.numberField} onChange={this.handleChange}></input>
+          <textarea name="textAreaField" value={this.state.textAreaField} onChange={this.handleChange}></textarea>
         </form>
       </>
     );
