@@ -16,7 +16,7 @@ const showCoins = async () => {
   
   coins.forEach((coin) => {
     const listItem = document.createElement('li');
-    listItem.innerText = `${coin.name} (${coin.symbol}): ${coin.priceUsd}`;
+    listItem.innerText = `${coin.name} (${coin.symbol}): ${Number(coin.priceUsd).toFixed(2)}`;
     coinsList.appendChild(listItem);
   })
 }
