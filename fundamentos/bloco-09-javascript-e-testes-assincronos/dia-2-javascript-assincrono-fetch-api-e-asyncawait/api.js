@@ -28,8 +28,6 @@ const showCoins = async () => {
 
   const firstTenCoins = coins.filter((_, index) => index < 10);
 
-  console.log(firstTenCoins);
-  
   firstTenCoins.forEach(coin => {
     const listItem = document.createElement('li');
     const convertToBrl = (Number(coin.priceUsd) * Number(convertedCoins.brl)).toFixed(2);
