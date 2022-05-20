@@ -9,8 +9,20 @@ const getCurrencies = async () => {
     return coins;
 }
 
+const convertCurrency = async () => {
+  const url = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.min.json';
+
+  const convertedCoins = await fetch(url)
+  .then(response => response.json())
+  .then(data => data.usd)
+  .catch(error => error.toString());
+
+  return convertedCoins;
+}
+
 const showCoins = async () => {
   const coins = await getCurrencies();
+  const convertedCoins = await convertCurrency();
   
   const coinsList = document.getElementById('coins-list');
 
@@ -20,9 +32,11 @@ const showCoins = async () => {
   
   firstTenCoins.forEach(coin => {
     const listItem = document.createElement('li');
-    listItem.innerText = `${coin.name} (${coin.symbol}): ${Number(coin.priceUsd).toFixed(2)}`;
+    const convertToBrl = (Number(coin.priceUsd) * Number(convertedCoins.brl)).toFixed(2);
+    listItem.innerText = `${coin.name} (${coin.symbol}): ${convertToBrl}`;
     coinsList.appendChild(listItem);
   })
 }
 
 window.onload = () => showCoins();
+
