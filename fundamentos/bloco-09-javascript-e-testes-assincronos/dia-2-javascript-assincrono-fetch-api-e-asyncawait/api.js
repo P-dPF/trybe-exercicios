@@ -13,8 +13,12 @@ const showCoins = async () => {
   const coins = await getCurrencies();
   
   const coinsList = document.getElementById('coins-list');
+
+  const firstTenCoins = coins.filter((_, index) => index < 10);
+
+  console.log(firstTenCoins);
   
-  coins.forEach((coin) => {
+  firstTenCoins.forEach(coin => {
     const listItem = document.createElement('li');
     listItem.innerText = `${coin.name} (${coin.symbol}): ${Number(coin.priceUsd).toFixed(2)}`;
     coinsList.appendChild(listItem);
