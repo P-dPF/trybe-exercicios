@@ -22,18 +22,6 @@ class App extends React.Component {
     this.setState({ showProfile: !showProfile });
   }
 
-  componentDidMount() {
-    const myUser = 'P-dPF'; //Preencha myUser com o seu user do GitHub.
-    try {
-      const url = `https://api.github.com/users/${myUser}`;
-      const response = await fetch(url)
-      const dataJson = await response.json()
-      this.setState({ api: dataJson })
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   render() {
     // 💡 está faltando algo aqui!
     const { showProfile } = this.state;
