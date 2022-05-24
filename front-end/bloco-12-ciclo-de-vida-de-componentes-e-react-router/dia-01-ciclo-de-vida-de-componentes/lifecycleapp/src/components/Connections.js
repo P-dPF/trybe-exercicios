@@ -22,6 +22,10 @@ class Connections extends React.Component {
 
   shouldComponentUpdate(_nextProps, { list }) {
     // 💡 o que será que vai aqui?
+    const maxContactsNumber = 3;
+
+    return list.length <= maxContactsNumber;
+    // A quantidade de contatos não pode ser maior que 3, portanto se a lista é maior que 3, ele deverá retornar false e impedir a atualização.
   }
 
   componentDidUpdate(_prevProps, prevState) {
