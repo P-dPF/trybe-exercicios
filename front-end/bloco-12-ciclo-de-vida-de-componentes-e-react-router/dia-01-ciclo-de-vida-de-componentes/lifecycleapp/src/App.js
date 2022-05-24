@@ -6,6 +6,7 @@ import Connections from './components/Connections';
 
 class App extends React.Component {
   constructor() {
+    // 💡 me preencha!
     super();
 
     this.state = {
@@ -34,6 +35,7 @@ class App extends React.Component {
   }
 
   render() {
+    // 💡 está faltando algo aqui!
     const { showProfile } = this.state;
     return (
       <div className="gitNetwork d-flex flex-column justify-content-center">
