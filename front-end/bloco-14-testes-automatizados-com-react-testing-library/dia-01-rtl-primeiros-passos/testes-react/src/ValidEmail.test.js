@@ -14,3 +14,9 @@ test('Testando um componente, caso o email seja inválido.', () => {
   const isValid = screen.getByText('Email Inválido');
   expect(isValid).toBeInTheDocument();
 });
+test('Testando se o componente não renderiza a mensagem de validação caso não haja email salvo', () => {
+  const EMAIL_USER = '';
+  render (<ValidEmail email={EMAIL_USER} />);
+  const isValid = screen.queryByTestId('validationMessage');
+  expect(isValid).not.toBeInTheDocument();
+})
