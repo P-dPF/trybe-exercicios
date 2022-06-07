@@ -7,12 +7,14 @@ test('Testando um componente, caso o email seja válido.', () => {
   render(<ValidEmail email={ EMAIL_USER } />);
   const isValid = screen.getByText('Email Válido');
   expect(isValid).toBeInTheDocument();
+  expect(isValid).toHaveAttribute('class', 'green-text');
 });
 test('Testando um componente, caso o email seja inválido.', () => {
   const EMAIL_USER = 'emailerrado';
   render(<ValidEmail email={ EMAIL_USER } />);
   const isValid = screen.getByText('Email Inválido');
   expect(isValid).toBeInTheDocument();
+  expect(isValid).toHaveAttribute('class', 'red-text');
 });
 test('Testando se o componente não renderiza a mensagem de validação caso não haja email salvo', () => {
   const EMAIL_USER = '';
