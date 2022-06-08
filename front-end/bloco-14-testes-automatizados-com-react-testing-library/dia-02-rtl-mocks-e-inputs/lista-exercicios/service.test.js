@@ -6,3 +6,9 @@ test('testa a função genrateNumber', () => {
   expect(service.generateNumber).toHaveBeenCalled();
   expect(service.generateNumber).toHaveBeenCalledTimes(1);
 });
+test('testa nova implementação de generateNumber', () => {
+  service.generateNumber = jest.fn().mockImplementationOnce((a, b) => a / b);
+  expect(service.generateNumber(10, 5)).toBe(2);
+  expect(service.generateNumber).toHaveBeenCalled();
+  expect(service.generateNumber).toHaveBeenCalledTimes(1);
+});
