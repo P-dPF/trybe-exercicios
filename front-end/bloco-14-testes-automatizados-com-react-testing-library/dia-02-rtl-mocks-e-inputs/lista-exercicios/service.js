@@ -3,8 +3,6 @@ const generateNumber = () => {
 }
 console.log(generateNumber());
 
-module.exports = { generateNumber };
-
 const upperCase = (string) => {
   return string.toUpperCase();
 }
@@ -22,3 +20,5 @@ const concatenate = (strOne, strTwo) => {
 }
 
 console.log(concatenate('pedro', 'pedro'));
+
+module.exports = { generateNumber, upperCase, firstLetter, concatenate };
