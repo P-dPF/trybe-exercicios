@@ -37,8 +37,21 @@
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
       };
+      const changeColors = (actionType) => ({
+        type: actionType,
+      })
       const reducer = (state = INITIAL_STATE, action) => {
         switch (action.type) {
+          case ('NEXT_COLOR' && state.index < state.colors.length):
+            return {
+              ...state,
+              index: state.index + 1,
+            }
+          case ('PREVIOUS_COLOR' && state.index >= 0):
+          return {
+            ...state,
+            index: state.index - 1,
+          }
           default:
             return state;
         }
