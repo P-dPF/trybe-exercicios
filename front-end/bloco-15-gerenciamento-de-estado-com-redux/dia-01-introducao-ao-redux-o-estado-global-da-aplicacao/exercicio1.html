@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      #container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        height: 50px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p>Color: <span id="value">white</span></p>
+      <button id="previous">Previous color</button>
+      <button id="next">Next color</button>
+      <button id="random">Random color</button>
+    </div>
+    <script>
+      const INITIAL_STATE = {
+        colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+        index: 0,
+      };
+      const changeColors = (actionType) => ({
+        type: actionType,
+      })
+      const reducer = (state = INITIAL_STATE, action) => {
+        switch (action.type) {
+          case ('NEXT_COLOR'):
+            return {
+              ...state,
+              index: state.index < state.colors.length ? state.index + 1 : 0,
+            }
+          case ('PREVIOUS_COLOR'):
+          return {
+            ...state,
+            index: state.index > 0 ? state.index - 1 : 0,
+          }
+          default:
+            return state;
+        }
+      }
+      const store = Redux.createStore(reducer)
+      const nextBtn = document.getElementById('next');
+      const prevBtn = document.getElementById('previous');
+      const randomBtn = document.getElementById('random');
+      nextBtn.addEventListener('click', () => {
+        console.log(store.dispatch(changeColors('NEXT_COLOR')));
+      });
+      prevBtn.addEventListener('click', () => {
+        console.log(store.dispatch(changeColors('PREVIOUS_COLOR')));
+      });
+      randomBtn.addEventListener('click', () => {
+        console.log(store.dispatch(changeColors('RANDOM_COLOR')));
+      });
+      store.subscribe(() => {
+        const colorValue = document.getElementById('value');
+        const getColor = () => store.getState().colors.find((color, index) => index === store.getState().index);
+        colorValue.innerHTML = getColor();
+        const container = document.getElementById('container');
+        container.style.backgroundColor = getColor();
+      });
+
+    </script>
+  </body>
+</html>
