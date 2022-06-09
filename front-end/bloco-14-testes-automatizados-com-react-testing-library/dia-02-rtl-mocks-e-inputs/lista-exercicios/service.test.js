@@ -30,8 +30,8 @@ describe('testes de generateNumber',() => {
 
 describe('testes de upperCase, firstLetter e concatenate', () => {
   test('nova implementação para upperCase para deixar em minúsculas', () => {
-    service.upperCase = jest.fn().mockImplementation((string) => string.toLowerCase());
-    expect(service.upperCase('PEdrO')).toBe('pedro');
+    const firstMock = jest.spyOn(service, 'upperCase').mockImplementation((string) => string.toLowerCase());
+    expect(firstMock('PEdrO')).toBe('pedro');
     expect(service.upperCase).toHaveBeenCalled();
     expect(service.upperCase).toHaveBeenCalledTimes(1);
     expect(service.upperCase).toHaveBeenCalledWith('PEdrO');
@@ -49,5 +49,9 @@ describe('testes de upperCase, firstLetter e concatenate', () => {
     expect(service.concatenate).toHaveBeenCalled();
     expect(service.concatenate).toHaveBeenCalledTimes(1);
     expect(service.concatenate).toHaveBeenCalledWith('pedro', 'pedro', 'pedro');
+  });
+  test('testa se upperCase foi restaurada para a implementação original', () => {
+    service.upperCase.mockRestore();
+    expect(service.upperCase('pEdRo')).toBe('PEDRO');
   });
 });
