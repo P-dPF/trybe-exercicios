@@ -31,6 +31,7 @@
       <p>Color: <span id="value">white</span></p>
       <button id="previous">Previous color</button>
       <button id="next">Next color</button>
+      <button id="random">Random color</button>
     </div>
     <script>
       const INITIAL_STATE = {
@@ -59,11 +60,15 @@
       const store = Redux.createStore(reducer)
       const nextBtn = document.getElementById('next');
       const prevBtn = document.getElementById('previous');
+      const randomBtn = document.getElementById('random');
       nextBtn.addEventListener('click', () => {
         console.log(store.dispatch(changeColors('NEXT_COLOR')));
       });
       prevBtn.addEventListener('click', () => {
         console.log(store.dispatch(changeColors('PREVIOUS_COLOR')));
+      });
+      randomBtn.addEventListener('click', () => {
+        console.log(store.dispatch(changeColors('RANDOM_COLOR')));
       });
       store.subscribe(() => {
         const colorValue = document.getElementById('value');
@@ -71,7 +76,8 @@
         colorValue.innerHTML = getColor();
         const container = document.getElementById('container');
         container.style.backgroundColor = getColor();
-      })
+      });
+
     </script>
   </body>
 </html>
