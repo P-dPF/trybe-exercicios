@@ -42,15 +42,15 @@
       })
       const reducer = (state = INITIAL_STATE, action) => {
         switch (action.type) {
-          case ('NEXT_COLOR' && state.index < state.colors.length):
+          case ('NEXT_COLOR'):
             return {
               ...state,
-              index: state.index + 1,
+              index: state.index < state.colors.length ? state.index + 1 : 0,
             }
-          case ('PREVIOUS_COLOR' && state.index >= 0):
+          case ('PREVIOUS_COLOR'):
           return {
             ...state,
-            index: state.index - 1,
+            index: state.index > 0 ? state.index - 1 : 0,
           }
           default:
             return state;
@@ -60,11 +60,18 @@
       const nextBtn = document.getElementById('next');
       const prevBtn = document.getElementById('previous');
       nextBtn.addEventListener('click', () => {
-        store.dispatch(changeColors('NEXT_COLOR'));
+        console.log(store.dispatch(changeColors('NEXT_COLOR')));
       });
       prevBtn.addEventListener('click', () => {
-        store.dispatch(changeColors('PREVIOUS_COLOR'));
+        console.log(store.dispatch(changeColors('PREVIOUS_COLOR')));
       });
+      store.subscribe(() => {
+        const colorValue = document.getElementById('value');
+        const getColor = () => store.getState().colors.find((color, index) => index === store.getState().index);
+        colorValue.innerHTML = getColor();
+        const container = document.getElementById('container');
+        container.style.backgroundColor = getColor();
+      })
     </script>
   </body>
 </html>
