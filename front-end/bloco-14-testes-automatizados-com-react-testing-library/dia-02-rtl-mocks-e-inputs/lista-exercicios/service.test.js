@@ -29,5 +29,13 @@ describe('testes de generateNumber',() => {
 });
 
 describe('testes de upperCase, firstLetter e concatenate', () => {
-  
+  test('nova implementação para upperCase', () => {
+    service.upperCase = jest.fn().mockImplementation((string) => string.toLowerCase());
+  });
+  test('nova implementação para firstLetter', () => {
+    service.firstLetter = jest.fn().mockImplementation((string) => string[string.length - 1]);
+  });
+  test('nova implementação para concatenate', () => {
+    service.concatenate = jest.fn().mockImplementation((strOne, strTwo, strThree) => `${strOne}${strTwo}${strThree}`);
+  });
 });
