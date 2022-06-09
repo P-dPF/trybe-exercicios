@@ -29,13 +29,25 @@ describe('testes de generateNumber',() => {
 });
 
 describe('testes de upperCase, firstLetter e concatenate', () => {
-  test('nova implementação para upperCase', () => {
+  test('nova implementação para upperCase para deixar em minúsculas', () => {
     service.upperCase = jest.fn().mockImplementation((string) => string.toLowerCase());
+    expect(service.upperCase('PEdrO')).toBe('pedro');
+    expect(service.upperCase).toHaveBeenCalled();
+    expect(service.upperCase).toHaveBeenCalledTimes(1);
+    expect(service.upperCase).toHaveBeenCalledWith('PEdrO');
   });
-  test('nova implementação para firstLetter', () => {
+  test('nova implementação para firstLetter para retornar a última letra', () => {
     service.firstLetter = jest.fn().mockImplementation((string) => string[string.length - 1]);
+    expect(service.firstLetter('pedro')).toBe('o');
+    expect(service.firstLetter).toHaveBeenCalled();
+    expect(service.firstLetter).toHaveBeenCalledTimes(1);
+    expect(service.firstLetter).toHaveBeenCalledWith('pedro');
   });
   test('nova implementação para concatenate', () => {
     service.concatenate = jest.fn().mockImplementation((strOne, strTwo, strThree) => `${strOne}${strTwo}${strThree}`);
+    expect(service.concatenate('pedro', 'pedro', 'pedro')).toBe('pedropedropedro');
+    expect(service.concatenate).toHaveBeenCalled();
+    expect(service.concatenate).toHaveBeenCalledTimes(1);
+    expect(service.concatenate).toHaveBeenCalledWith('pedro', 'pedro', 'pedro');
   });
 });
