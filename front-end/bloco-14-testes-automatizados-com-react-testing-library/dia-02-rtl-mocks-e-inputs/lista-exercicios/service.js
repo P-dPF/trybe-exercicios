@@ -1,3 +1,5 @@
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
 const generateNumber = () => {
   return Math.floor(Math.random() * 101);
 }
@@ -21,4 +23,9 @@ const concatenate = (strOne, strTwo) => {
 
 console.log(concatenate('pedro', 'pedro'));
 
-module.exports = { generateNumber, upperCase, firstLetter, concatenate };
+const fetchDogPics = () => {
+  const URL = 'https://dog.ceo/api/breeds/image/random';
+  return fetch(URL).then(response => response.json()).then(data => data.message);
+}
+
+module.exports = { generateNumber, upperCase, firstLetter, concatenate, fetchDogPics };

@@ -55,3 +55,7 @@ describe('testes de upperCase, firstLetter e concatenate', () => {
     expect(service.upperCase('pEdRo')).toBe('PEDRO');
   });
 });
+
+describe('testa mock da requisição de API fetchDogPics', () => {
+  const apiMock = jest.spyOn(service, 'fetchDogPics');
+});
