@@ -59,4 +59,19 @@ const mainFour = async() => {
   }
 }
 
-mainFour();
+// mainFour();
+
+const mainFive = async () => {
+  try {
+    const characters = await fsPromises.readFile('./simpsonFamily.json', 'utf-8');
+    const charactersList = JSON.parse(characters);
+    const nelsonMuntz = { id: '5', name: 'Nelson Muntz' };
+    const updatedCharactersList = [...charactersList, nelsonMuntz];
+    const stringifiedCharacters = JSON.stringify(updatedCharactersList);
+    await fsPromises.writeFile('./simpsonFamily.json', stringifiedCharacters);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+mainFive();
