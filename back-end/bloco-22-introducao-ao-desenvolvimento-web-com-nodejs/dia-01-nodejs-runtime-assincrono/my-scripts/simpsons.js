@@ -25,6 +25,22 @@ const mainTwo = (characterId) => {
   return promise;
 }
 
-mainTwo(5)
-  .then(result => console.log(result))
-  .catch(error => console.log(error.message));
+// mainTwo(5)
+//   .then(result => console.log(result))
+//   .catch(error => console.log(error.message));
+
+const mainThree = async () => {
+  try {
+    const characters = await fsPromises.readFile('./simpsons.json', 'utf-8');
+    const charactersList = JSON.parse(characters);
+    const filteredCharacters = charactersList.filter((character) => (
+      +(character.id) !== 6 && +(character.id) !== 10
+    ));
+    const stringifiedCharacters = JSON.stringify(filteredCharacters);
+    await fsPromises.writeFile('./simpsons.json', stringifiedCharacters);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+mainThree();
