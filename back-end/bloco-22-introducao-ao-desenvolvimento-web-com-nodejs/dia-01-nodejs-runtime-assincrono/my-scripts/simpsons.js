@@ -74,4 +74,16 @@ const mainFive = async () => {
   }
 }
 
-mainFive();
+// mainFive();
+
+const mainSix = async () => {
+  try {
+    const characters = await fsPromises.readFile('./simpsonFamily.json', 'utf-8');
+    const replaceNelson = characters.replace('Nelson Muntz', 'Maggie Simpson');
+    await fsPromises.writeFile('./simpsonFamily.json', replaceNelson);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+mainSix();
