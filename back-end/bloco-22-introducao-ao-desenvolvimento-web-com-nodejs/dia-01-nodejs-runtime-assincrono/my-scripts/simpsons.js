@@ -43,4 +43,20 @@ const mainThree = async () => {
   }
 }
 
-mainThree();
+// mainThree();
+
+const mainFour = async() => {
+  try {
+    const characters = await fsPromises.readFile('./simpsons.json', 'utf-8');
+    const charactersList = JSON.parse(characters);
+    const filteredCharacters = charactersList.filter((character) => (
+      +(character.id) >= 1 && +(character.id) <= 4
+    ));
+    const stringifiedCharacters = JSON.stringify(filteredCharacters);
+    await fsPromises.writeFile('simpsonFamily.json', stringifiedCharacters);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+mainFour();
