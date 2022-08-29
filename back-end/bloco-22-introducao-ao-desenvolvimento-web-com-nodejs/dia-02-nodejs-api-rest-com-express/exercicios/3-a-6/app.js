@@ -52,3 +52,15 @@ app.get('/filter/myActivities', (req, res) => {
 
   res.status(200).json({ status: getActivityByStatus })
 });
+
+app.get('/search/myActivities', (req, res) => {
+  const { q } = req.query;
+  let filteredActivities;
+
+  if (q) {
+    filteredActivities = activities.filter(activity => activity.description.includes(q));
+
+  }
+
+  res.status(200).json({ filteredActivities });
+});
