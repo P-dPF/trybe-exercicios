@@ -37,3 +37,18 @@ app.get('/myActivities/:id', (req, res) => {
 module.exports = app;
 
 app.get('/myActivities', (req, res) => res.status(200).json({ activities }));
+
+app.get('/filter/myActivities', (req, res) => {
+  const { status } = req.query;
+  let getActivityByStatus = [];
+
+  for (let i = 0; i < activities.length; i += 1) {
+    const activity = activities[i];
+
+    if (activity.status === status) {
+      getActivityByStatus.push(activity);
+    }
+  }
+
+  res.status(200).json({ status: getActivityByStatus })
+});
