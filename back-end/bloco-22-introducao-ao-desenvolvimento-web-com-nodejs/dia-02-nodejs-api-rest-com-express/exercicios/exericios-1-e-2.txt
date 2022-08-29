@@ -1,0 +1,6 @@
+Para que é usado o código de status 400 e 422?
+  400 - Bad Request: cliente envia requisição com erros de sintaxe e o servidor nãp consegue interpretar a requisição.
+  422 - Unprocessable Entity: cliente envia requisição com tipo e sintaxe corretos, mas com problemas de semântica.
+
+Para que é usado o código de status 401?
+  401 - Unauthorized: cliente não esta autenticado para receber a resposta da requisição que fez.
