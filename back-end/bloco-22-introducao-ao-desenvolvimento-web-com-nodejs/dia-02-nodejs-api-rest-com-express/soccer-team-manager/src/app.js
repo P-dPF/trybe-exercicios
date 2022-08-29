@@ -54,4 +54,18 @@ app.delete('/teams/:id', (req, res) => {
   res.status(200).end();
 });
 
+app.get('/teams/:id', (req, res) => {
+  const { id } = req.params;
+  let searchedTeam;
+
+  for (let i = 0; i < teams.length; i += 1) {
+    const team = teams[i];
+    if (team.id === Number(id)) {
+      searchedTeam = team;
+    }
+  }
+
+  res.status(200).json({ searchedTeam });
+});
+
 module.exports = app;
