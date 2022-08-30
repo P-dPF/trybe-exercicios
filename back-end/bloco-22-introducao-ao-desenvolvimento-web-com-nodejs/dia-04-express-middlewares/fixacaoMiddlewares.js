@@ -47,7 +47,7 @@ app.post('/teams', validateTeam, (req, res) => {
   res.status(201).json(team);
 });
 
-app.put('/teams/:id', validateTeam, (req, res) => {
+app.put('/teams/:id', validateTeam, existingId, (req, res) => {
   const id = Number(req.params.id);
   const team = teams.find(t => t.id === id);
   if (team) {
@@ -60,7 +60,7 @@ app.put('/teams/:id', validateTeam, (req, res) => {
   }
 });
 
-app.delete('/teams/:id', (req, res) => {
+app.delete('/teams/:id', existingId, (req, res) => {
   const id = Number(req.params.id);
   const team = teams.find(t => t.id === id);
   if (team) {
