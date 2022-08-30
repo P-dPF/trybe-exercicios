@@ -6,3 +6,5 @@ const validateTeam = (req, res, next) => {
     res.sendStatus(400); // Ou já responde avisando que deu errado
   }
 };
+
+module.exports = validateTeam;
