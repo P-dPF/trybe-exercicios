@@ -12,7 +12,15 @@ app.use(express.json());
 
 app.get('/teams', (req, res) => res.json(teams));
 
-app.get('/teams/:id', (req, res) => {
+const existingId = (req, res, next) => {
+  const { id } = req.params;
+  const hasId = teams.some((team) => team.id === Number(id));
+  return hasId
+    ? next()
+    : res.sendStatus(400);
+};
+
+app.get('/teams/:id', existingId, (req, res) => {
   const id = Number(req.params.id);
   const team = teams.find(t => t.id === id);
   if (team) {
