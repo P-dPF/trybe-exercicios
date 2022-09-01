@@ -5,6 +5,7 @@ const validateDescription = require('../middlewares/validateDescription');
 const validateCreatedAt = require('../middlewares/validateCreatedAt');
 const validateRating = require('../middlewares/validateRating');
 const validateDifficulty = require('../middlewares/validateDifficulty');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 const router = express.Router();
 
@@ -14,7 +15,8 @@ router.use(
   validateDescription,
   validateCreatedAt,
   validateRating,
-  validateDifficulty
+  validateDifficulty,
+  authMiddleware
 );
 
 router.post('/', (req, res) => {
