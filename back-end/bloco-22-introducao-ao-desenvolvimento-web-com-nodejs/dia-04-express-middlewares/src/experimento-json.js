@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+app.use(express.static('./images'));
+
 app.post('/fail', (req, res) => {
   res.status(200).json({ greeting: `Hello, ${req.body.nome}!` });
 });
