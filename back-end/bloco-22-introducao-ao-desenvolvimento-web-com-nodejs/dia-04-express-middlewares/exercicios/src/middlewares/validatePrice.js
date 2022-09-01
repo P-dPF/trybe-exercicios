@@ -1,7 +1,7 @@
 const validatePrice = (req, res, next) => {
   const price = Number(req.body.price);
 
-  if (!price) {
+  if (price === '') {
     return res.status(400).json({ message: "O campo price é obrigatório" });
   }
 
