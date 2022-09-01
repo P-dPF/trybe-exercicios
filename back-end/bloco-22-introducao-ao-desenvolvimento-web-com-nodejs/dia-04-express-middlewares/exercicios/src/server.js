@@ -1,3 +1,3 @@
-const app = require('./exercicio');
+const app = require('./app');
 
 app.listen(3001, () => console.log('App running on port 3001'));
