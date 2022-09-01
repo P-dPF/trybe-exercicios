@@ -1,7 +1,12 @@
 const express = require('express');
 const validateTeam = require('./middlewares/validateTeam');
+require('express-async-errors');
+const morgan = require('morgan');
+const cors = require('cors');
 
 const app = express();
+app.use(morgan('dev'));
+app.use(cors());
 
 let nextId = 3;
 const teams = [
