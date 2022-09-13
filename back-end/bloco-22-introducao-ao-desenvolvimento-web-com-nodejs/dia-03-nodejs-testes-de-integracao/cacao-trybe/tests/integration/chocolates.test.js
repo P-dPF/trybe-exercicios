@@ -110,4 +110,13 @@ const mockFile = JSON.stringify({
         ]);
       });
     });
+
+    describe('Usando o endpoint GET /chocolates/total para exibir a quantidade de chocolates na base de dados', function () {
+      it('Retorna a quantidade de chocolates', async function () {
+        const response = await chai.request(app).get('/chocolates/total');
+
+        expect(response.status).to.be.equal(200);
+        expect(response.body.totalChocolates).to.equal(4);
+      });
+    });
   });
