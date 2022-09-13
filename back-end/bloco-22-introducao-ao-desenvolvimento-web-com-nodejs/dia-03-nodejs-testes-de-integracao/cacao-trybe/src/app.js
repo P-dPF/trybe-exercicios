@@ -17,7 +17,7 @@ app.get('/chocolates/search', async (req, res) => {
   const { name } = req.query;
   const searchedChocolates = await cacaoTrybe.getChocolatesByName(name);
   return searchedChocolates.length === 0
-  ? res.status(404).json({ searchedChocolates })
+  ? res.status(404).json(searchedChocolates)
   : res.status(200).json({ searchedChocolates });
 });
 

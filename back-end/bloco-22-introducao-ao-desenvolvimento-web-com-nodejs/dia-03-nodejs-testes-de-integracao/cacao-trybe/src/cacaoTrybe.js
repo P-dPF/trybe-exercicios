@@ -35,7 +35,7 @@ const getTotalOfChocolates = async () => {
 
 const getChocolatesByName = async (name) => {
   const cacaoTrybe = await readCacaoTrybeFile();
-  return cacaoTrybe.filter((chocolate) => chocolate.name.includes(name));
+  return cacaoTrybe.chocolates.filter((chocolate) => chocolate.name.includes(name));
 };
 
 module.exports = {
