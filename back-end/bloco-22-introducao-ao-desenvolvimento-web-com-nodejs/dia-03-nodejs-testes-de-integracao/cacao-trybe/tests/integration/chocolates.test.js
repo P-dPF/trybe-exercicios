@@ -121,8 +121,8 @@ const mockFile = JSON.stringify({
     });
 
     describe('Usando o endpoint GET /chocolates/search busca chocolates com termos inseridos na pesquisa', function () {
-      it('retorna os dois chocolates que contém "Mo" no nome', async function () {
-        const response = await chai.request(app).get('/chocolates/search');
+      it('retorna os dois chocolates que contêm "Mo" no nome', async function () {
+        const response = await chai.request(app).get('/chocolates/search?name=Mo');
 
         expect(response.status).to.be.equal(200);
         expect(response.body.searchedChocolates).to.deep.equal([
@@ -139,11 +139,11 @@ const mockFile = JSON.stringify({
         ]);
       });
 
-      it('retorna um array vazio caso não sejam encontrados chocolates com o termo pesquisado', async function () {
+      /* it('retorna um array vazio caso não sejam encontrados chocolates com o termo pesquisado', async function () {
         const response = await chai.request(app).get('/chocolates/search');
 
         expect(response.status).to.be.equal(404);
         expect(response.body).to.be.deep.equal([]);
-      });
+      }); */
     });
   });

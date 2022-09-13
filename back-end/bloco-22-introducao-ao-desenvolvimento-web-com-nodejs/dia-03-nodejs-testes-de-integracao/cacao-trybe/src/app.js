@@ -13,6 +13,14 @@ app.get('/chocolates/total', async (req, res) => {
   res.status(200).json({ totalChocolates });
 });
 
+app.get('/chocolates/search', async (req, res) => {
+  const { name } = req.query;
+  const searchedChocolates = await cacaoTrybe.getChocolatesByName(name);
+  return searchedChocolates.length === 0
+  ? res.status(404).json({ searchedChocolates })
+  : res.status(200).json({ searchedChocolates });
+});
+
 app.get('/chocolates/:id', async (req, res) => {
   const { id } = req.params;
   // Usamos o Number para converter o id em um inteiro
