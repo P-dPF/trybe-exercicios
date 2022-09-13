@@ -119,4 +119,24 @@ const mockFile = JSON.stringify({
         expect(response.body).to.deep.equal({ totalChocolates: 4 });
       });
     });
+
+    describe('Usando o endpoint GET /chocolates/search busca chocolates com termos inseridos na pesquisa', () => {
+      it('retorna os dois chocolates que contém "Mo" no nome', async () => {
+        const response = await chai.request(app).get('/chocolates/search');
+
+        expect(response.status).to.be.equal(200);
+        expect(response.body.searchedChocolates).to.deep.equal([
+          {
+            id: 3,
+            name: "Mon Chéri",
+            brandId: 2
+          },
+          {
+            id: 4,
+            name: "Mounds",
+            brandId: 3
+          }
+        ]);
+      });
+    });
   });
