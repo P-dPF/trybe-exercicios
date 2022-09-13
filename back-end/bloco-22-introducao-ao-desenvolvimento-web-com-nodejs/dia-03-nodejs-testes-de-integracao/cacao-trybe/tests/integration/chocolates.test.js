@@ -1,13 +1,12 @@
 const chai = require('chai');
-const chaiHttp = require('chai-http');
 const sinon = require('sinon');
 const fs = require('fs')
-
+const chaiHttp = require('chai-http');
 const app = require('../../src/app');
 
-chai.use(chaiHttp);
-
 const { expect } = chai;
+
+chai.use(chaiHttp);
 
 const mockFile = JSON.stringify({ 
   brands: [
@@ -48,8 +47,14 @@ const mockFile = JSON.stringify({
   ]});
 
   describe('Testando a API Cacao Trybe', function () {
-    sinon.stub(fs.promises, 'readFile')
+    beforeEach(function () {
+      sinon.stub(fs.promises, 'readFile')
         .resolves(mockFile);
+    });
+  
+    afterEach(function () {
+      sinon.restore();
+    });
     describe('Usando o método GET em /chocolates', function () {
       it('Retorna a lista completa de chocolates!', async function () {
         const output = [
