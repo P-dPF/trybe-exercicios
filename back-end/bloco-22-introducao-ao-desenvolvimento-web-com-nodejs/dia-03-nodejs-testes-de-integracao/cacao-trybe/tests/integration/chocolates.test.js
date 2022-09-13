@@ -116,7 +116,7 @@ const mockFile = JSON.stringify({
         const response = await chai.request(app).get('/chocolates/total');
 
         expect(response.status).to.be.equal(200);
-        expect(response.body.totalChocolates).to.equal(4);
+        expect(response.body).to.deep.equal({ totalChocolates: 4 });
       });
     });
   });
