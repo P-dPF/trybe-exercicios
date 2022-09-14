@@ -38,8 +38,18 @@ const getChocolatesByName = async (name) => {
   return cacaoTrybe.chocolates.filter((chocolate) => chocolate.name.includes(name));
 };
 
+const writeCacaoTrybeFile = async (newChocolatesList) => {
+  const path = '/files/cacaoTrybeFile.json';
+  try {
+    await fs.writeFile(join(__dirname, path), JSON.stringify(newChocolatesList))
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
 const updateChocolate = async (id, name, brandId) => {
   const cacaoTrybe = await readCacaoTrybeFile();
+  let hasChanges = false;
   let updatedChocolate;
   for (let i = 0; i < cacaoTrybe.chocolates.length; i += 1) {
     const currChocolate = cacaoTrybe.chocolates[i];
@@ -47,7 +57,11 @@ const updateChocolate = async (id, name, brandId) => {
       currChocolate.name = name;
       currChocolate.brandId = brandId;
       updatedChocolate = currChocolate;
+      hasChanges = true;
     }
+  }
+  if (hasChanges) {
+    await writeCacaoTrybeFile(cacaoTrybe);
   }
   return updatedChocolate;
 };
