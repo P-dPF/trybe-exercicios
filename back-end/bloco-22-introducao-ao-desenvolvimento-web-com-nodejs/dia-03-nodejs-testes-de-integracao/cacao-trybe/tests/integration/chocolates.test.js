@@ -149,7 +149,9 @@ const mockFile = JSON.stringify({
 
     describe('Atualiza um chocolate com o método PUT em chocolates/:id', function () {
       it('retorna o chocolate devidamente atualizado', async function () {
-        const response = await chai.request(app).put('/chocolates/1');
+        const response = await chai.request(app)
+          .put('/chocolates/1')
+          .send({ name: 'Mint Pretty Good', brandId: 2 });
 
         expect(response.status).to.be.equal(200);
         expect(response.body).to.be.deep.equal({
@@ -162,7 +164,9 @@ const mockFile = JSON.stringify({
       });
 
       it('retorna mensagem de erro caso nenhum chocolate seja encontrado', async function () {
-        const response = await chai.request(app).put('/chocolates/8');
+        const response = await chai.request(app)
+          .put('/chocolates/8')
+          .send({ name: 'Mint Pretty Good', brandId: 2 });
 
         expect(response.status).to.be.equal(404);
         expect(response.body).to.be.deep.equal({ message: "chocolate not found" });

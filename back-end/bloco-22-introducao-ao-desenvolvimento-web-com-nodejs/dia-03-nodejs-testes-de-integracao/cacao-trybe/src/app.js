@@ -3,6 +3,8 @@ const cacaoTrybe = require('./cacaoTrybe');
 
 const app = express();
 
+app.use(express.json());
+
 app.get('/chocolates', async (req, res) => {
   const chocolates = await cacaoTrybe.getAllChocolates();
   res.status(200).json({ chocolates });
@@ -32,6 +34,15 @@ app.get('/chocolates/brand/:brandId', async (req, res) => {
   const { brandId } = req.params;
   const chocolates = await cacaoTrybe.getChocolatesByBrand(Number(brandId));
   res.status(200).json({ chocolates });
+});
+
+app.put('/chocolates/:id', async (req, res) => {
+  const id = Number(req.params.id);
+  const { name, brandId } = req.body;
+  const updatedChocolate = await cacaoTrybe.updateChocolate(id, name, brandId);
+  return updatedChocolate
+  ? res.status(200).json({ chocolate: updatedChocolate })
+  : res.status(404).json({ message: 'chocolate not found' });
 });
 
 module.exports = app;

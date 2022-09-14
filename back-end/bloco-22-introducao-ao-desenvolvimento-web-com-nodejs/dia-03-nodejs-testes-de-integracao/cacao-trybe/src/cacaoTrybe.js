@@ -38,10 +38,25 @@ const getChocolatesByName = async (name) => {
   return cacaoTrybe.chocolates.filter((chocolate) => chocolate.name.includes(name));
 };
 
+const updateChocolate = async (id, name, brandId) => {
+  const cacaoTrybe = await readCacaoTrybeFile();
+  let updatedChocolate;
+  for (let i = 0; i < cacaoTrybe.chocolates.length; i += 1) {
+    const currChocolate = cacaoTrybe.chocolates[i];
+    if (currChocolate.id === id) {
+      currChocolate.name = name;
+      currChocolate.brandId = brandId;
+      updatedChocolate = currChocolate;
+    }
+  }
+  return updatedChocolate;
+};
+
 module.exports = {
     getAllChocolates,
     getChocolateById,
     getChocolatesByBrand,
     getTotalOfChocolates,
     getChocolatesByName,
+    updateChocolate,
 };
