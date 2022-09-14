@@ -146,4 +146,26 @@ const mockFile = JSON.stringify({
         expect(response.body).to.be.deep.equal([]);
       });
     });
+
+    describe('Atualiza um chocolate com o método PUT em chocolates/:id', function () {
+      it('retorna o chocolate devidamente atualizado', async function () {
+        const response = await chai.request(app).put('/chocolates/1');
+
+        expect(response.status).to.be.equal(200);
+        expect(response.body).to.be.deep.equal({
+          chocolate: { 
+            id: 1,
+            name: "Mint Pretty Good",
+            brandId: 2
+          }
+        })
+      });
+
+      it('retorna mensagem de erro caso nenhum chocolate seja encontrado', async function () {
+        const response = await chai.request(app).put('/chocolates/8');
+
+        expect(response.status).to.be.equal(404);
+        expect(response.body).to.be.deep.equal({ message: "chocolate not found" });
+      });
+    });
   });
