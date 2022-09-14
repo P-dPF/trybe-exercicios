@@ -3,11 +3,6 @@ const peopleDB = require('../db/peopleDB');
 
 const router = express.Router();
 
-router.post('/', (req, res) => {
-  const person = req.body;
-  res.status(201).json(person);
-});
-
 router.post('/', async (req, res) => {
   const person = req.body;
   try {
