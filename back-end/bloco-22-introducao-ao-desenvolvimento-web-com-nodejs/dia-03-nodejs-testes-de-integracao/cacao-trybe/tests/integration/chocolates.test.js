@@ -140,7 +140,7 @@ const mockFile = JSON.stringify({
       });
 
       it('retorna um array vazio caso não sejam encontrados chocolates com o termo pesquisado', async function () {
-        const response = await chai.request(app).get('/chocolates/search');
+        const response = await chai.request(app).get('/chocolates/search?name=ZZZ');
 
         expect(response.status).to.be.equal(404);
         expect(response.body).to.be.deep.equal([]);
