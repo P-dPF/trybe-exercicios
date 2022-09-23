@@ -18,8 +18,8 @@ const create = async (title, author, pageQuantity) => {
   return newBook;
 };
 
-const update = async (id, title, author, pageQuantity) => {
-  const updatedBook = await Book.update(
+const update = async (id, { title, author, pageQuantity }) => {
+  const [updatedBook] = await Book.update(
     {title, author, pageQuantity}, 
     { where: { id } }
   );
