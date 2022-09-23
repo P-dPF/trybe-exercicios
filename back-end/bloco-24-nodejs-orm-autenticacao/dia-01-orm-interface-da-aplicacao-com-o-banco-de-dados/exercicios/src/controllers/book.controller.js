@@ -32,7 +32,7 @@ const update = async (req, res) => {
   const { title, author, pageQuantity } = req.body;
 
   try {
-    const updatedBook = await BookService.create(bookId, { title, author, pageQuantity });
+    const updatedBook = await BookService.update(bookId, { title, author, pageQuantity });
     return res.status(200).json({ message: "Book updated!", book: updatedBook })
   } catch (e) {
     console.log(error.message);

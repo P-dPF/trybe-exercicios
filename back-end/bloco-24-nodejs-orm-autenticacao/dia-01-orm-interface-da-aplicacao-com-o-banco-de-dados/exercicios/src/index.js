@@ -9,5 +9,6 @@ app.use(express.json());
 app.get('/books', Book.getAll);
 app.get('/books/:bookId', Book.getById);
 app.post('/books', Book.create);
+app.put('/books/:bookId', Book.update);
 
 app.listen(PORT, () => console.log(`Ouvindo na porta ${PORT}!`));
