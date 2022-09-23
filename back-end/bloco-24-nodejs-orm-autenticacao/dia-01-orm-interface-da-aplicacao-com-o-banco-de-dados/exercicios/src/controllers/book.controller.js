@@ -9,6 +9,17 @@ const getAll = async (req, res) => {
   }
 };
 
+const getById = (req, res) => {
+  const { bookId } = req.params;
+  try {
+    const book = await.BookService.getById(bookId);
+    return res.status(200).json(book)
+  } catch (e) {
+    res.status(404).json({ "message": "Book not found" });
+  }
+};
+
 module.exports = {
   getAll,
+  getById,
 }
