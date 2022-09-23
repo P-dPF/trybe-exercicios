@@ -11,13 +11,9 @@ const getAll = async (req, res) => {
 
 const getById = async (req, res) => {
   const { bookId } = req.params;
-  try {
-    const book = await BookService.getById(bookId);
-    return res.status(200).json(book)
-  } catch (e) {
-    console.log(error.message);
-    res.status(404).json({ message: "Book not found" });
-  }
+  const book = await BookService.getById(bookId);
+  if (!book) res.status(404).json({ message: "Book not found" });
+  res.status(200).json(book)
 };
 
 const create = async (req, res) => {
@@ -31,13 +27,10 @@ const update = async (req, res) => {
   const { bookId } = req.params;
   const { title, author, pageQuantity } = req.body;
 
-  try {
-    const updatedBook = await BookService.update(bookId, { title, author, pageQuantity });
-    return res.status(200).json({ message: "Book updated!", book: updatedBook })
-  } catch (e) {
-    console.log(error.message);
-    res.status(404).json({ message: "Book not found" });
-  }
+  const updatedBook = await BookService.update(bookId, { title, author, pageQuantity });
+  if (!updatedBook) return res.status(404).json({ message: "Book not found" });
+
+  res.status(200).json({ message: "Book updated!" });
 };
 
 module.exports = {
