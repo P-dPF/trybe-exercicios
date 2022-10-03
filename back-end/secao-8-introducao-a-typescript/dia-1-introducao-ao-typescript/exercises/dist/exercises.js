@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ArcoIris = exports.Semana = exports.circulo = exports.trapezio = exports.losango = exports.rectangle = exports.square = exports.triangle = exports.sumArray = exports.add = exports.personAge = exports.greeter = void 0;
+exports.circulo = exports.trapezio = exports.losango = exports.rectangle = exports.square = exports.triangle = exports.sumArray = exports.add = exports.personAge = exports.greeter = void 0;
 function greeter(name) {
     return `Olá ${name}!`;
 }
@@ -51,12 +51,12 @@ var Semana;
 (function (Semana) {
     Semana[Semana["DOMINGO"] = 1] = "DOMINGO";
     Semana[Semana["SEGUNDA"] = 2] = "SEGUNDA";
-    Semana[Semana["TER\u00C7A"] = 3] = "TER\u00C7A";
+    Semana[Semana["TERCA"] = 3] = "TERCA";
     Semana[Semana["QUARTA"] = 4] = "QUARTA";
     Semana[Semana["QUINTA"] = 5] = "QUINTA";
     Semana[Semana["SEXTA"] = 6] = "SEXTA";
-    Semana[Semana["S\u00C1BADO"] = 7] = "S\u00C1BADO";
-})(Semana = exports.Semana || (exports.Semana = {}));
+    Semana[Semana["SABADO"] = 7] = "SABADO";
+})(Semana || (Semana = {}));
 var ArcoIris;
 (function (ArcoIris) {
     ArcoIris["VERMELHO"] = "VERMELHO";
@@ -66,4 +66,4 @@ var ArcoIris;
     ArcoIris["AZUL"] = "AZUL";
     ArcoIris["ANIL"] = "ANIL";
     ArcoIris["VIOLETA"] = "VIOLETA";
-})(ArcoIris = exports.ArcoIris || (exports.ArcoIris = {}));
+})(ArcoIris || (ArcoIris = {}));

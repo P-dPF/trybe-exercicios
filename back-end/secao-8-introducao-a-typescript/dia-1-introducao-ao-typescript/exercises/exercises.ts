@@ -44,17 +44,17 @@ export function circulo(raio:number):number {
 }
 
 // BÔNUS: EXERCÍCIOS DE ENUM
-export enum Semana {
+enum Semana {
   DOMINGO = 1,
   SEGUNDA,
-  TERÇA,
+  TERCA,
   QUARTA,
   QUINTA,
   SEXTA,
-  SÁBADO,
+  SABADO,
 }
 
-export enum ArcoIris {
+enum ArcoIris {
   VERMELHO = 'VERMELHO',
   LARANJA = 'LARANJA',
   AMARELO = 'AMARELO',
