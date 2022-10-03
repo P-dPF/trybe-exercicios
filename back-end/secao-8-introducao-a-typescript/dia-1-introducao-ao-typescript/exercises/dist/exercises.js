@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.circulo = exports.trapezio = exports.losango = exports.rectangle = exports.square = exports.triangle = exports.sumArray = exports.add = exports.personAge = exports.greeter = void 0;
+exports.ArcoIris = exports.Semana = exports.circulo = exports.trapezio = exports.losango = exports.rectangle = exports.square = exports.triangle = exports.sumArray = exports.add = exports.personAge = exports.greeter = void 0;
 function greeter(name) {
     return `Olá ${name}!`;
 }
@@ -42,6 +42,28 @@ function trapezio(baseMaior, baseMenor, altura) {
 exports.trapezio = trapezio;
 // EXERCÍCIO 3
 function circulo(raio) {
-    return 3.14 * (raio ** 2);
+    const PI = 3.14;
+    return PI * (raio ** 2);
 }
 exports.circulo = circulo;
+// BÔNUS: EXERCÍCIOS DE ENUM
+var Semana;
+(function (Semana) {
+    Semana[Semana["DOMINGO"] = 1] = "DOMINGO";
+    Semana[Semana["SEGUNDA"] = 2] = "SEGUNDA";
+    Semana[Semana["TER\u00C7A"] = 3] = "TER\u00C7A";
+    Semana[Semana["QUARTA"] = 4] = "QUARTA";
+    Semana[Semana["QUINTA"] = 5] = "QUINTA";
+    Semana[Semana["SEXTA"] = 6] = "SEXTA";
+    Semana[Semana["S\u00C1BADO"] = 7] = "S\u00C1BADO";
+})(Semana = exports.Semana || (exports.Semana = {}));
+var ArcoIris;
+(function (ArcoIris) {
+    ArcoIris["VERMELHO"] = "VERMELHO";
+    ArcoIris["LARANJA"] = "LARANJA";
+    ArcoIris["AMARELO"] = "AMARELO";
+    ArcoIris["VERDE"] = "VERDE";
+    ArcoIris["AZUL"] = "AZUL";
+    ArcoIris["ANIL"] = "ANIL";
+    ArcoIris["VIOLETA"] = "VIOLETA";
+})(ArcoIris = exports.ArcoIris || (exports.ArcoIris = {}));

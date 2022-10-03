@@ -28,16 +28,38 @@ export function rectangle(base: number, height: number): number {
 
 // FIXAÇÃO
 // EXERCÍCIO 1
-export function losango(diagMaior: number, diagMenor: number): number {
+export function losango(diagMaior:number, diagMenor:number): number {
   return (diagMaior * diagMenor) / 2;
 }
 
 // EXERCÍCIO 2
-export function trapezio(baseMaior: number, baseMenor: number, altura: number): number {
+export function trapezio(baseMaior:number, baseMenor:number, altura:number):number {
   return ((baseMaior + baseMenor) * altura) / 2;
 }
 
 // EXERCÍCIO 3
-export function circulo(raio: number): number {
-  return 3.14 * (raio ** 2);
+export function circulo(raio:number):number {
+  const PI:number = 3.14
+  return PI * (raio ** 2);
+}
+
+// BÔNUS: EXERCÍCIOS DE ENUM
+export enum Semana {
+  DOMINGO = 1,
+  SEGUNDA,
+  TERÇA,
+  QUARTA,
+  QUINTA,
+  SEXTA,
+  SÁBADO,
+}
+
+export enum ArcoIris {
+  VERMELHO = 'VERMELHO',
+  LARANJA = 'LARANJA',
+  AMARELO = 'AMARELO',
+  VERDE = 'VERDE',
+  AZUL = 'AZUL',
+  ANIL = 'ANIL',
+  VIOLETA = 'VIOLETA',
 }
