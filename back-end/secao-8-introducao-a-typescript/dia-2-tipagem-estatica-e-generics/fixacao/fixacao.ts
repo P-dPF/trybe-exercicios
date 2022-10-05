@@ -57,3 +57,25 @@ class Flight {
     this._isConfirmed = isConfirmed;
   }
 }
+
+// INTERFACES
+interface Car {
+  brand: string;
+  model: string;
+  modelYear: Date;
+  price: number;
+  move: () => void;
+}
+
+interface Feline {
+  species: string;
+  weight: number;
+  roar: () => void;
+}
+
+interface Aircraft {
+  manufacturer: string;
+  model: string;
+  seats: number;
+  fly: () => void;
+}
