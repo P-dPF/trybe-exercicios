@@ -1,3 +1,4 @@
+// TYPE ALIASES
 type Bird = {
   color: string;
   ageSpan: number;
@@ -11,3 +12,12 @@ type Address = {
   city: string;
   country: string;
 };
+
+// TYPE UNIONS
+type MatterStates = 'líquido' | 'sólido' | 'gasoso';
+
+type Id = number | string;
+
+type OperationalSystems = 'linux' | 'mac os' | 'windows';
+
+type Vowels = 'a' | 'e' | 'i' | 'o' | 'u';
