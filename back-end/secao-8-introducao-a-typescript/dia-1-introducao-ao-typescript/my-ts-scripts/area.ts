@@ -25,4 +25,6 @@ const execArea = (): void => {
   
 };
 
-execArea();
+// execArea();
+
+module.exports = execArea;

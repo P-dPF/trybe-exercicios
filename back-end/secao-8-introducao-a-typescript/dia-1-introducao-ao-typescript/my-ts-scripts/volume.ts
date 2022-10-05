@@ -24,4 +24,6 @@ const execVolume = (): void => {
   
 };
 
-execVolume();
+// execVolume();
+
+module.exports = execVolume;

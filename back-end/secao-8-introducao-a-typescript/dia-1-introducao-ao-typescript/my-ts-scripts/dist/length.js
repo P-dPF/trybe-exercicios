@@ -16,4 +16,5 @@ const execLength = () => {
     const convertResult = convertLength(valueInput, origUnit, newUnit);
     console.log(`${valueInput}${origUnit} é igual a ${convertResult}${newUnit}`);
 };
-execLength();
+// execLength();
+module.exports = execLength;

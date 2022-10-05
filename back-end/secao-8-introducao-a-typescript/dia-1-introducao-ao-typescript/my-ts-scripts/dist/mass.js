@@ -16,4 +16,5 @@ const execMass = () => {
     const convertResult = convertMass(valueInput, origUnit, newUnit);
     console.log(`${valueInput}${origUnit} é igual a ${convertResult}${newUnit}`);
 };
-execMass();
+// execMass();
+module.exports = execMass;

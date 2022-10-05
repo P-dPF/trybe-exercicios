@@ -25,4 +25,6 @@ const execCapacity = (): void => {
   
 };
 
-execCapacity();
+// execCapacity();
+
+module.exports = execCapacity;

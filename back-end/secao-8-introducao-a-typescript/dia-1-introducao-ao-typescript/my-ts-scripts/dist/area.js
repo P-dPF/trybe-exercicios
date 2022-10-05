@@ -16,4 +16,5 @@ const execArea = () => {
     const convertResult = convertArea(valueInput, origUnit, newUnit);
     console.log(`${valueInput}${origUnit} é igual a ${convertResult}${newUnit}`);
 };
-execArea();
+// execArea();
+module.exports = execArea;

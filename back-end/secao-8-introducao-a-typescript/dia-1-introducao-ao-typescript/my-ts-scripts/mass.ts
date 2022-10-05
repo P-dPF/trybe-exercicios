@@ -25,4 +25,6 @@ const execMass = (): void => {
   
 };
 
-execMass();
+// execMass();
+
+module.exports = execMass;

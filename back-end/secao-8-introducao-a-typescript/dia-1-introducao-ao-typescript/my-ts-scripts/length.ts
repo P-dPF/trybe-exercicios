@@ -24,4 +24,6 @@ const execLength = (): void => {
   
 };
 
-execLength();
+// execLength();
+
+module.exports = execLength;

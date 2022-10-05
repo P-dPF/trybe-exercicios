@@ -16,4 +16,5 @@ const execVolume = () => {
     const convertResult = convertVolume(valueInput, origUnit, newUnit);
     console.log(`${valueInput}${origUnit} é igual a ${convertResult}${newUnit}`);
 };
-execVolume();
+// execVolume();
+module.exports = execVolume;

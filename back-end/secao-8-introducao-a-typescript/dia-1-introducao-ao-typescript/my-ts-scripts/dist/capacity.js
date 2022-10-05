@@ -16,4 +16,5 @@ const execCapacity = () => {
     const convertResult = convertCapacity(valueInput, origUnit, newUnit);
     console.log(`${valueInput}${origUnit} é igual a ${convertResult}${newUnit}`);
 };
-execCapacity();
+// execCapacity();
+module.exports = execCapacity;
