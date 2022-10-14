@@ -1,3 +1,4 @@
+// FIXAÇÃO 1 A 3
 class TV {
   brand: string;
   size: number;
@@ -24,3 +25,8 @@ class TV {
 
 const newTv = new TV('Samsung', 55, '1920 x 1080', ['HDMI', 'WIFI']);
 newTv.turnOn();
+
+// FIXAÇÃO 4
+// console.log()
+// console.error()
+// console.table()
