@@ -52,3 +52,32 @@ class MyClass implements myInterface {
 const obj = new MyClass(10);
 const sum = obj.myFunc(20);
 console.log(sum);
+
+// COMPOSIÇÃO
+ interface Logger {
+  log(param: string): void;
+ }
+
+class ConsoleLogger implements Logger {
+  public log(param: string): void {
+    console.log(param);
+  }
+}
+
+class ConsoleLogger2 {
+  public log(param: string): void {
+    console.log(`Logger 2: ${param}`);
+  }
+}
+
+interface Database {
+  logger: Logger;
+  save(key: string, value: string): void;
+}
+
+class ExampleDatabase implements Database {
+  constructor(public logger: Logger = new ConsoleLogger()) {}
+  save(key: string, value: string): void {
+    this.logger.log(key, value);
+  }
+}
