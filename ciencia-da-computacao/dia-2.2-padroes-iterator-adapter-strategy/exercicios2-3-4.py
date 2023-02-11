@@ -1,3 +1,6 @@
+from collections.abc import Iterable, Iterator
+
+
 class Carta:
     def __init__(self, valor, naipe):
         self.valor = valor
@@ -22,5 +25,10 @@ class Baralho:
         return len(self._cartas)
 
 
-class BaralhoIterator:
-    pass
+class BaralhoIterable(Iterable):
+    def __init__(self, baralho, carta):
+        self.baralho = baralho
+        self.carta = carta
+
+    def __iter__(self):
+        return BaralhoIterator(self.baralho, self.carta)
