@@ -9,5 +9,6 @@ response = requests.get(BASE_URL)
 selector = Selector(text=response.text)
 
 title = selector.css("h1::text").get()
+price = selector.css("h1 ~ p::text").re_first(r"\d+\.\d{2}")
 
-print(title)
+print(price)
