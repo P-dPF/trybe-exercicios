@@ -10,5 +10,11 @@ selector = Selector(text=response.text)
 
 title = selector.css("h1::text").get()
 price = selector.css("h1 ~ p::text").re_first(r"\d+\.\d{2}")
+description = selector.css("#product_description ~ p::text").get()
 
-print(price)
+suffix = "...more"
+
+if description.endswith(suffix):
+    description = description[: -len(suffix)]
+
+print(description)
